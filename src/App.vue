@@ -30,13 +30,13 @@
       <tbody>
         <tr v-for="(item, i) in items" :key="i">
           <td>
-            {{ item.firstname }}
+            <img :src="item.url" alt="" width="80" height="80">
           </td>
           <td>
-            {{ item.lastname }}
+            {{ item.name }}
           </td>
           <td>
-            {{ item.age }}
+            {{ item.price }}
           </td>
           <td>
             <button
@@ -87,7 +87,7 @@ export default {
       }
     },
     async getData () {
-      const { data } = await axios.get('https://61094d2fd71b670017639843.mockapi.io/users')
+      const { data } = await axios.get('https://61094d2fd71b670017639843.mockapi.io/products')
       this.items = data
     },
     async add () {
